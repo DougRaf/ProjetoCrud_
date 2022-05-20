@@ -1,0 +1,47 @@
+﻿@model ProjetoCrud_.Models.Avaliacao
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar avaliação</h1>
+
+<h4>Digite sua nova avaliação</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Ouser" class="control-label"></label>
+                <input asp-for="Ouser" class="form-control" />
+                <span asp-validation-for="Ouser" class="text-danger"></span>
+            </div>
+
+              <div class="form-group">
+                <label asp-for="Aoperadora" class="control-label"></label>
+                <input asp-for="Aoperadora" class="form-control" />
+                <span asp-validation-for="Aoperadora" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Avaliação" class="control-label"></label>
+                <input asp-for="Avaliação" class="form-control" />
+                <span asp-validation-for="Avaliação" class="text-danger"></span>
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <br />
+    <a asp-action="Index">Voltar a listagem</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

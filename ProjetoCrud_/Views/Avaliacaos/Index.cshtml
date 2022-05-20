@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoCrud_.Models.Avaliacao>
+
+    @{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro de Avaliação</h1>
+
+<p>
+    <a asp-action="Create">Criar nova avaliação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ouser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aoperadora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliação)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ouser)
+            </td>
+               <td>
+                @Html.DisplayFor(modelItem => item.Aoperadora)
+            </td>
+               <td>
+                @Html.DisplayFor(modelItem => item.Avaliação)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
